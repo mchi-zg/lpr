@@ -1,1 +1,69 @@
-# lpr
+# DeepStream License Plate Recognition
+
+## Description
+
+This DeepStream sample is to show using graded models in below pipeline for car plate characters recognition with DeepStream SDK 5.0.1. 
+
+`PGIE(car detection model) -> SGIE(LPD model) -> SGIE(LPR model)`
+
+***Car detection model**:* 
+
+​	US car detection, refer to the tlt pretrained trafficcamnet model. The model can be downloaded with the instruction of /opt/nvidia/deepstream/deepstream-5.0/samples/configs/tlt_pretrained_models/README
+​	Chinese car detection, the new tlt models are available. 
+
+*LPD(Car License Plate Detection) model* is LPD model.
+
+*LPR(car License Plate Recognition) model* is LPR models:
+
+More details about these TLT3.0 LPD and LPR models and their TLT training, please refer to [APLR blog](https://docs.google.com/document/d/1tMH0ku284AqqcVdioS1XazyT0-uGNNpg4-r64JaIBZA/edit#).
+
+## Performance
+
+Below is end-to-end performance of this sample with an 1080p video.
+
+| Device        | Number of streams | Batch Size | Total FPS |
+| ------------- | ----------------- | ---------- | --------- |
+| Jetson Nano   | 1                 | 1          | 9.2       |
+| Jetson NX     | 3                 | 3          | 80.31     |
+| Jetson Xavier | 5                 | 5          | 146.43    |
+| T4            | 14                | 14         | 447.15    |
+
+## Prerequisites
+
+* [Deepstream SDK 5.0.1](https://developer.nvidia.com/deepstream-sdk) 
+
+  Make sure deepstream-test1 sample can run successful to verify your DeepStream installation
+
+* tlt-converter
+
+  Download x86 or Jetson tlt-converter from https://developer.nvidia.com/tlt-getting-started
+
+## Download
+### 1. Download Project with SSH or HTTPS
+
+```
+// SSH
+git clone git@github.com:mchi-zg/deepstream_lpr_app.git
+// or HTTPS
+git clone https://github.com/mchi-zg/deepstream_lpr_app.git
+```
+
+### 2. Download Models
+
+```
+cd deepstream_lpr_app
+./download.sh
+```
+
+## Build
+
+```
+make
+```
+
+## Run
+
+```
+./lpr-test-app [language mode:1-us 2-chinese] [sink mode:1-output as 264 stream file 2-no output 3-display on screen] [0:ROI disable|0:ROI enable] [input mp4 file path and name] [input mp4 file path and name] ... [input mp4 file path and name] [output 264 file path and name]```
+```
+
