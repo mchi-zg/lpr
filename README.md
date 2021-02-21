@@ -49,11 +49,12 @@ git clone git@github.com:mchi-zg/deepstream_lpr_app.git
 git clone https://github.com/mchi-zg/deepstream_lpr_app.git
 ```
 
-### 2. Prepare Models
+### 2. Prepare Models and TensorRT engine
 
 ```
 cd deepstream_lpr_app
 ./download.sh
+// DS5.0.1 gst-nvinfer cannot generate TRT engine for LPR model, so generate it with tlt-converter
 ./tlt-converter -k nvidia_tlt -p image_input,1x3x48x96,4x3x48x96,16x3x48x96 \
            ./us_lprnet_baseline18_deployable.etlt -t fp16 -e lpr_us_onnx_b16.engine
 ```
