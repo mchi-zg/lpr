@@ -4,8 +4,7 @@
 - [Download](#download)
   * [1. Download Project with SSH or HTTPS](#1-download-project-with-ssh-or-https)
   * [2. Prepare Models and TensorRT engine](#2-prepare-models-and-tensorrt-engine)
-- [Build](#build)
-- [Run](#run)
+- [Build and Run](#build-and-run)
 
 ## Description
 
@@ -63,15 +62,10 @@ cd deepstream_lpr_app
            ./us_lprnet_baseline18_deployable.etlt -t fp16 -e lpr_us_onnx_b16.engine
 ```
 
-## Build
+## Build and Run
 
 ```
 make
-```
-
-## Run
-
-```
 ./lpr-app [language mode:1-us 2-chinese] \ 
                [sink mode:1-output as 264 stream file 2-no output 3-display on screen] \ 
                [0:ROI disable|0:ROI enable] [input mp4 file path and name] \ 
