@@ -4,16 +4,17 @@
 
 This DeepStream sample is to show using graded models in below pipeline for car plate characters recognition with DeepStream SDK 5.0.1. 
 
-`PGIE(car detection model) -> SGIE(LPD model) -> SGIE(LPR model)`
+```
+Multiple local videos -> nvstreammux -> PGIE(car detection model) -> SGIE(LPD model) -> SGIE(LPR model)
+```
 
-***Car detection model**:* 
+This pipeline is based on three TLT models
 
-​	US car detection, refer to the tlt pretrained trafficcamnet model. The model can be downloaded with the instruction of /opt/nvidia/deepstream/deepstream-5.0/samples/configs/tlt_pretrained_models/README
-​	Chinese car detection, the new tlt models are available. 
+*Car detection model*
 
-*LPD(Car License Plate Detection) model* is LPD model.
+*LPD(Car License Plate Detection) model*
 
-*LPR(car License Plate Recognition) model* is LPR models:
+*LPR(car License Plate Recognition) model*
 
 More details about these TLT3.0 LPD and LPR models and their TLT training, please refer to [APLR blog](https://docs.google.com/document/d/1tMH0ku284AqqcVdioS1XazyT0-uGNNpg4-r64JaIBZA/edit#).
 
