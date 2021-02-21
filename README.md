@@ -10,11 +10,11 @@ Multiple local videos -> nvstreammux -> PGIE(car detection model) -> SGIE(LPD mo
 
 This pipeline is based on three TLT models
 
-*Car detection model*
+* Car detection model
 
-*LPD(Car License Plate Detection) model*
+* LPD(Car License Plate Detection) model
 
-*LPR(car License Plate Recognition) model*
+* LPR(car License Plate Recognition) model
 
 More details about these TLT3.0 LPD and LPR models and their TLT training, please refer to [APLR blog](https://docs.google.com/document/d/1tMH0ku284AqqcVdioS1XazyT0-uGNNpg4-r64JaIBZA/edit#).
 
