@@ -49,11 +49,12 @@ git clone git@github.com:mchi-zg/deepstream_lpr_app.git
 git clone https://github.com/mchi-zg/deepstream_lpr_app.git
 ```
 
-### 2. Download Models
+### 2. Prepare Models
 
 ```
 cd deepstream_lpr_app
 ./download.sh
+./tlt-converter -k nvidia_tlt -p image_input,1x3x48x96,4x3x48x96,16x3x48x96 ./us_lprnet_baseline18_deployable.etlt -t fp16 -e lpr_us_onnx_b16.engine
 ```
 
 ## Build
@@ -65,9 +66,10 @@ make
 ## Run
 
 ```
-./lpr-test-app [language mode:1-us 2-chinese] 
+./lpr-app [language mode:1-us 2-chinese] 
                [sink mode:1-output as 264 stream file 2-no output 3-display on screen] 
                [0:ROI disable|0:ROI enable] [input mp4 file path and name] 
-               [input mp4 file path and name] ... [input mp4 file path and name] [output 264 file path and name]```
+               [input mp4 file path and name] ... [input mp4 file path and name] 
+               [output 264 file path and name]```
 ```
 
