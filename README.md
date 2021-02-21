@@ -1,4 +1,12 @@
-# DeepStream License Plate Recognition
+- [Description](#description)
+- [Performance](#performance)
+- [Prerequisites](#prerequisites)
+- [Download](#download)
+  * [1. Download Project with SSH or HTTPS](#1-download-project-with-ssh-or-https)
+  * [2. Prepare Models and TensorRT engine](#2-prepare-models-and-tensorrt-engine)
+- [Build](#build)
+- [Run](#run)
+- [Known issues](#known-issues)
 
 ## Description
 
@@ -74,4 +82,4 @@ make
                [input mp4 file path and name] ... [input mp4 file path and name] \
                [output 264 file path and name]
 ```
-
+## Known issues
