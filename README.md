@@ -11,7 +11,7 @@
 This DeepStream sample is to show using graded models in below pipeline for car plate characters recognition with DeepStream SDK 5.0.1. 
 
 ```
-Multiple local videos -> nvstreammux(batching) -> PGIE(car detection) -> SGIE(LPD) -> SGIE(LPR) --> output (file or display)
+ PGIE(car detection) -> SGIE(LPD) -> SGIE(LPR)
 ```
 ![LPR/LPD application](lpr.png)
 
