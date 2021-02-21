@@ -72,6 +72,6 @@ make
                [sink mode:1-output as 264 stream file 2-no output 3-display on screen] \ 
                [0:ROI disable|0:ROI enable] [input mp4 file path and name] \ 
                [input mp4 file path and name] ... [input mp4 file path and name] \
-               [output 264 file path and name]```
+               [output 264 file path and name]
 ```
 
