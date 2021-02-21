@@ -31,10 +31,10 @@ Below is end-to-end performance of this sample with an 1080p video.
 
 | Device        | Number of streams    |       Batch Size      |       Total FPS       |
 | ------------- | -------------------- | --------------------  | --------------------  |
-| Jetson Nano   | 1                    | 1                     | 9.2                   |
-| Jetson NX     | 3                    | 3                     | 80.31                 |
-| Jetson Xavier | 5                    | 5                     | 146.43                |
-| T4            | 14                   | 14                    | 447.15                |
+| Jetson Nano   | 1                    | 1                     | 9                     |
+| Jetson NX     | 3                    | 3                     | 80                    |
+| Jetson Xavier | 5                    | 5                     | 146                   |
+| T4            | 14                   | 14                    | 447                   |
 
 ## Prerequisites
 
