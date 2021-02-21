@@ -39,7 +39,7 @@ Below is end-to-end performance of this sample with an 1080p video.
 
 * [Deepstream SDK 5.0.1](https://developer.nvidia.com/deepstream-sdk)  
    Make sure deepstream-test1 sample can run successful to verify your DeepStream installation
-* tlt-converter  
+* [tlt-converter](https://developer.nvidia.com/tlt-getting-started)  
    Download x86 or Jetson tlt-converter from https://developer.nvidia.com/tlt-getting-started
 
 ## Download
