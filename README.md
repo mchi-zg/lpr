@@ -14,7 +14,8 @@ This DeepStream sample is to show using graded models in below pipeline for car 
 Multiple local videos -> nvstreammux(batching) -> PGIE(car detection) -> SGIE(LPD) -> SGIE(LPR) --> output (file or display)
 ```
 ![LPR/LPD application](lpr.png)
-This pipeline is based on three TLT models
+
+This pipeline is based on three TLT models below
 
 * Car detection model
 
