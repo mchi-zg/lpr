@@ -4,15 +4,14 @@
 - [Download](#download)
   * [1. Download Project with SSH or HTTPS](#1-download-project-with-ssh-or-https)
   * [2. Prepare Models and TensorRT engine](#2-prepare-models-and-tensorrt-engine)
-- [Build](#build)
-- [Run](#run)
+- [Build and Run](#build-and-run)
 
 ## Description
 
 This DeepStream sample is to show using graded models in below pipeline for car plate characters recognition with DeepStream SDK 5.0.1. 
 
 ```
-Multiple local videos -> nvstreammux -> PGIE(car detection model) -> SGIE(LPD model) -> SGIE(LPR model)
+Multiple local videos -> nvstreammux(batching) -> PGIE(car detection) -> SGIE(LPD) -> SGIE(LPR) --> output (file or display)
 ```
 
 This pipeline is based on three TLT models
@@ -29,22 +28,19 @@ More details about these TLT3.0 LPD and LPR models and their TLT training, pleas
 
 Below is end-to-end performance of this sample with an 1080p video.
 
-| Device        | Number of streams | Batch Size | Total FPS |
-| ------------- | ----------------- | ---------- | --------- |
-| Jetson Nano   | 1                 | 1          | 9.2       |
-| Jetson NX     | 3                 | 3          | 80.31     |
-| Jetson Xavier | 5                 | 5          | 146.43    |
-| T4            | 14                | 14         | 447.15    |
+| Device        | Number of streams    |       Batch Size      |       Total FPS       |
+| ------------- | -------------------- | --------------------  | --------------------  |
+| Jetson Nano   | 1                    | 1                     | 9                     |
+| Jetson NX     | 3                    | 3                     | 80                    |
+| Jetson Xavier | 5                    | 5                     | 146                   |
+| T4            | 14                   | 14                    | 447                   |
 
 ## Prerequisites
 
-* [Deepstream SDK 5.0.1](https://developer.nvidia.com/deepstream-sdk) 
-
-  Make sure deepstream-test1 sample can run successful to verify your DeepStream installation
-
-* tlt-converter
-
-  Download x86 or Jetson tlt-converter from https://developer.nvidia.com/tlt-getting-started
+* [Deepstream SDK 5.0.1](https://developer.nvidia.com/deepstream-sdk)  
+   Make sure deepstream-test1 sample can run successful to verify your DeepStream installation
+* tlt-converter  
+   Download x86 or Jetson tlt-converter from https://developer.nvidia.com/tlt-getting-started
 
 ## Download
 ### 1. Download Project with SSH or HTTPS
@@ -66,15 +62,10 @@ cd deepstream_lpr_app
            ./us_lprnet_baseline18_deployable.etlt -t fp16 -e lpr_us_onnx_b16.engine
 ```
 
-## Build
+## Build and Run
 
 ```
 make
-```
-
-## Run
-
-```
 ./lpr-app [language mode:1-us 2-chinese] \ 
                [sink mode:1-output as 264 stream file 2-no output 3-display on screen] \ 
                [0:ROI disable|0:ROI enable] [input mp4 file path and name] \ 
